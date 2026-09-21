@@ -1,0 +1,519 @@
+{
+  "metadata": {
+    "projeto": "SolarTrack",
+    "sprint": "Sprint 2 — Prova de Conceito",
+    "data_simulacao": "21/06/2026",
+    "localizacao": "São Paulo, SP",
+    "fator_emissao_co2_kg_kwh": 0.0816,
+    "tarifa_energia_r_kwh": 0.9
+  },
+  "sistema": {
+    "num_paineis": 4,
+    "area_painel_m2": 1.5,
+    "eficiencia_percentual": 20.0,
+    "potencia_pico_instalada_wp": 1200.0
+  },
+  "resumo_do_dia": {
+    "energia_total_kwh": 3.9641,
+    "co2_total_evitado_kg": 0.3235,
+    "economia_total_reais": 3.57,
+    "potencia_pico_w": 583.1,
+    "hora_pico": "12:00",
+    "arvores_equivalentes": 5.4233,
+    "num_paineis": 4,
+    "area_total_m2": 6.0,
+    "eficiencia_percentual": 20.0
+  },
+  "series_horaria": [
+    {
+      "hora": "00:00",
+      "hora_decimal": 0.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "00:30",
+      "hora_decimal": 0.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "01:00",
+      "hora_decimal": 1.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "01:30",
+      "hora_decimal": 1.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "02:00",
+      "hora_decimal": 2.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "02:30",
+      "hora_decimal": 2.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "03:00",
+      "hora_decimal": 3.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "03:30",
+      "hora_decimal": 3.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "04:00",
+      "hora_decimal": 4.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "04:30",
+      "hora_decimal": 4.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "05:00",
+      "hora_decimal": 5.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "05:30",
+      "hora_decimal": 5.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "06:00",
+      "hora_decimal": 6.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "06:30",
+      "hora_decimal": 6.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 0.0,
+      "co2_evitado_kg": 0.0,
+      "economia_reais": 0.0,
+      "arvores_equivalentes": 0.0
+    },
+    {
+      "hora": "07:00",
+      "hora_decimal": 7.0,
+      "irradiancia_w_m2": 44.0,
+      "potencia_w": 50.2,
+      "energia_acumulada_kwh": 0.0251,
+      "co2_evitado_kg": 0.002,
+      "economia_reais": 0.02,
+      "arvores_equivalentes": 0.0343
+    },
+    {
+      "hora": "07:30",
+      "hora_decimal": 7.5,
+      "irradiancia_w_m2": 122.1,
+      "potencia_w": 139.2,
+      "energia_acumulada_kwh": 0.0947,
+      "co2_evitado_kg": 0.0077,
+      "economia_reais": 0.09,
+      "arvores_equivalentes": 0.1296
+    },
+    {
+      "hora": "08:00",
+      "hora_decimal": 8.0,
+      "irradiancia_w_m2": 196.1,
+      "potencia_w": 223.6,
+      "energia_acumulada_kwh": 0.2065,
+      "co2_evitado_kg": 0.0168,
+      "economia_reais": 0.19,
+      "arvores_equivalentes": 0.2825
+    },
+    {
+      "hora": "08:30",
+      "hora_decimal": 8.5,
+      "irradiancia_w_m2": 264.7,
+      "potencia_w": 301.8,
+      "energia_acumulada_kwh": 0.3574,
+      "co2_evitado_kg": 0.0292,
+      "economia_reais": 0.32,
+      "arvores_equivalentes": 0.4889
+    },
+    {
+      "hora": "09:00",
+      "hora_decimal": 9.0,
+      "irradiancia_w_m2": 326.8,
+      "potencia_w": 372.5,
+      "energia_acumulada_kwh": 0.5436,
+      "co2_evitado_kg": 0.0444,
+      "economia_reais": 0.49,
+      "arvores_equivalentes": 0.7438
+    },
+    {
+      "hora": "09:30",
+      "hora_decimal": 9.5,
+      "irradiancia_w_m2": 381.2,
+      "potencia_w": 434.5,
+      "energia_acumulada_kwh": 0.7609,
+      "co2_evitado_kg": 0.0621,
+      "economia_reais": 0.68,
+      "arvores_equivalentes": 1.041
+    },
+    {
+      "hora": "10:00",
+      "hora_decimal": 10.0,
+      "irradiancia_w_m2": 427.0,
+      "potencia_w": 486.8,
+      "energia_acumulada_kwh": 1.0043,
+      "co2_evitado_kg": 0.0819,
+      "economia_reais": 0.9,
+      "arvores_equivalentes": 1.374
+    },
+    {
+      "hora": "10:30",
+      "hora_decimal": 10.5,
+      "irradiancia_w_m2": 463.5,
+      "potencia_w": 528.4,
+      "energia_acumulada_kwh": 1.2685,
+      "co2_evitado_kg": 0.1035,
+      "economia_reais": 1.14,
+      "arvores_equivalentes": 1.7354
+    },
+    {
+      "hora": "11:00",
+      "hora_decimal": 11.0,
+      "irradiancia_w_m2": 490.0,
+      "potencia_w": 558.6,
+      "energia_acumulada_kwh": 1.5478,
+      "co2_evitado_kg": 0.1263,
+      "economia_reais": 1.39,
+      "arvores_equivalentes": 2.1175
+    },
+    {
+      "hora": "11:30",
+      "hora_decimal": 11.5,
+      "irradiancia_w_m2": 506.1,
+      "potencia_w": 577.0,
+      "energia_acumulada_kwh": 1.8363,
+      "co2_evitado_kg": 0.1498,
+      "economia_reais": 1.65,
+      "arvores_equivalentes": 2.5122
+    },
+    {
+      "hora": "12:00",
+      "hora_decimal": 12.0,
+      "irradiancia_w_m2": 511.5,
+      "potencia_w": 583.1,
+      "energia_acumulada_kwh": 2.1278,
+      "co2_evitado_kg": 0.1736,
+      "economia_reais": 1.92,
+      "arvores_equivalentes": 2.9111
+    },
+    {
+      "hora": "12:30",
+      "hora_decimal": 12.5,
+      "irradiancia_w_m2": 506.1,
+      "potencia_w": 577.0,
+      "energia_acumulada_kwh": 2.4163,
+      "co2_evitado_kg": 0.1972,
+      "economia_reais": 2.17,
+      "arvores_equivalentes": 3.3058
+    },
+    {
+      "hora": "13:00",
+      "hora_decimal": 13.0,
+      "irradiancia_w_m2": 490.0,
+      "potencia_w": 558.6,
+      "energia_acumulada_kwh": 2.6956,
+      "co2_evitado_kg": 0.22,
+      "economia_reais": 2.43,
+      "arvores_equivalentes": 3.6879
+    },
+    {
+      "hora": "13:30",
+      "hora_decimal": 13.5,
+      "irradiancia_w_m2": 463.5,
+      "potencia_w": 528.4,
+      "energia_acumulada_kwh": 2.9598,
+      "co2_evitado_kg": 0.2415,
+      "economia_reais": 2.66,
+      "arvores_equivalentes": 4.0493
+    },
+    {
+      "hora": "14:00",
+      "hora_decimal": 14.0,
+      "irradiancia_w_m2": 427.0,
+      "potencia_w": 486.8,
+      "energia_acumulada_kwh": 3.2032,
+      "co2_evitado_kg": 0.2614,
+      "economia_reais": 2.88,
+      "arvores_equivalentes": 4.3823
+    },
+    {
+      "hora": "14:30",
+      "hora_decimal": 14.5,
+      "irradiancia_w_m2": 381.2,
+      "potencia_w": 434.5,
+      "energia_acumulada_kwh": 3.4204,
+      "co2_evitado_kg": 0.2791,
+      "economia_reais": 3.08,
+      "arvores_equivalentes": 4.6796
+    },
+    {
+      "hora": "15:00",
+      "hora_decimal": 15.0,
+      "irradiancia_w_m2": 326.8,
+      "potencia_w": 372.5,
+      "energia_acumulada_kwh": 3.6067,
+      "co2_evitado_kg": 0.2943,
+      "economia_reais": 3.25,
+      "arvores_equivalentes": 4.9344
+    },
+    {
+      "hora": "15:30",
+      "hora_decimal": 15.5,
+      "irradiancia_w_m2": 264.7,
+      "potencia_w": 301.8,
+      "energia_acumulada_kwh": 3.7576,
+      "co2_evitado_kg": 0.3066,
+      "economia_reais": 3.38,
+      "arvores_equivalentes": 5.1408
+    },
+    {
+      "hora": "16:00",
+      "hora_decimal": 16.0,
+      "irradiancia_w_m2": 196.1,
+      "potencia_w": 223.6,
+      "energia_acumulada_kwh": 3.8694,
+      "co2_evitado_kg": 0.3157,
+      "economia_reais": 3.48,
+      "arvores_equivalentes": 5.2938
+    },
+    {
+      "hora": "16:30",
+      "hora_decimal": 16.5,
+      "irradiancia_w_m2": 122.1,
+      "potencia_w": 139.2,
+      "energia_acumulada_kwh": 3.939,
+      "co2_evitado_kg": 0.3214,
+      "economia_reais": 3.55,
+      "arvores_equivalentes": 5.389
+    },
+    {
+      "hora": "17:00",
+      "hora_decimal": 17.0,
+      "irradiancia_w_m2": 44.0,
+      "potencia_w": 50.2,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "17:30",
+      "hora_decimal": 17.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "18:00",
+      "hora_decimal": 18.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "18:30",
+      "hora_decimal": 18.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "19:00",
+      "hora_decimal": 19.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "19:30",
+      "hora_decimal": 19.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "20:00",
+      "hora_decimal": 20.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "20:30",
+      "hora_decimal": 20.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "21:00",
+      "hora_decimal": 21.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "21:30",
+      "hora_decimal": 21.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "22:00",
+      "hora_decimal": 22.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "22:30",
+      "hora_decimal": 22.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "23:00",
+      "hora_decimal": 23.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "23:30",
+      "hora_decimal": 23.5,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    },
+    {
+      "hora": "24:00",
+      "hora_decimal": 24.0,
+      "irradiancia_w_m2": 0.0,
+      "potencia_w": 0.0,
+      "energia_acumulada_kwh": 3.9641,
+      "co2_evitado_kg": 0.3235,
+      "economia_reais": 3.57,
+      "arvores_equivalentes": 5.4233
+    }
+  ]
+}

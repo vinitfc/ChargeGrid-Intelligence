@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChargeGrid Intelligence</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+            background: #14532d;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        }
+
+        .card h2 {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .value {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .unit {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .section {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            background: #38bdf8;
+            color: #082f49;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .stop {
+            background: #ef4444;
+            color: white;
+        }
+
+        .solar {
+            background: #22c55e;
+            color: #052e16;
+        }
+
+        .reset {
+            background: #64748b;
+            color: white;
+        }
+
+        .control-info {
+            background: #334155;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .power-control {
+            margin-top: 20px;
+        }
+
+        .power-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .power-control input {
+            width: 100%;
+        }
+
+        .power-value {
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background: #334155;
+            padding: 18px 25px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 25px;
+            color: #38bdf8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #334155;
+            text-align: center;
+        }
+
+        th {
+            color: #38bdf8;
+        }
+
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 250px;
+            padding: 20px 10px 0;
+            background: #0f172a;
+            border-radius: 10px;
+            gap: 10px;
+        }
+
+        .bar-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 1;
+        }
+
+        .bar {
+            width: 65%;
+            min-height: 4px;
+            background: #38bdf8;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .bar-label {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 7px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #64748b;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>ChargeGrid Intelligence</h1>
+
+    <p class="subtitle">
+        Integração SolarTrack + Smart Charging
+    </p>
+
+    <div class="status" id="status">
+        SISTEMA INTEGRADO E OPERACIONAL
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>Energia Solar Utilizada</h2>
+            <div class="value" id="solar">0.00</div>
+            <div class="unit">kWh</div>
+        </div>
+
+        <div class="card">
+            <h2>Energia Carregada</h2>
+            <div class="value" id="energia">0.00</div>
+            <div class="unit">kWh</div>
+        </div>
+
+        <div class="card">
+            <h2>Demanda do Veículo</h2>
+            <div class="value" id="demanda">0.0</div>
+            <div class="unit">kW</div>
+        </div>
+
+        <div class="card">
+            <h2>Participação Solar</h2>
+            <div class="value" id="participacao">0.0</div>
+            <div class="unit">%</div>
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Controle do Smart Charging</h2>
+
+        <div class="controls">
+
+            <button onclick="iniciar()">
+                INICIAR CARREGAMENTO
+            </button>
+
+            <button class="stop" onclick="parar()">
+                PARAR CARREGAMENTO
+            </button>
+
+            <button
+                class="solar"
+                onclick="ativarSolar()"
+                id="botaoSolar"
+            >
+                GERAÇÃO SOLAR AUTOMÁTICA
+            </button>
+
+            <button class="reset" onclick="resetar()">
+                RESETAR
+            </button>
+
+        </div>
+
+        <div class="control-info" id="info">
+            Sistema aguardando comando.
+        </div>
+
+        <div class="power-control">
+
+            <label>
+                Potência de carregamento
+            </label>
+
+            <input
+                type="range"
+                min="1"
+                max="7"
+                step="0.5"
+                value="1"
+                id="slider"
+                oninput="potenciaManual()"
+            >
+
+            <div class="power-value">
+                <span id="potencia">1.0</span> kW
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Arquitetura da Integração</h2>
+
+        <div class="flow">
+
+            <div class="box">
+                SolarTrack
+                <br>
+                Energia Fotovoltaica
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="box">
+                Dados de Geração
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="box">
+                Smart Charging
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="box">
+                Carregador EV
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Geração Solar</h2>
+
+        <div class="chart" id="grafico"></div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Exemplos de Operação</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Horário</th>
+                    <th>Energia Solar</th>
+                    <th>Carregamento</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabela"></tbody>
+
+        </table>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Sustentabilidade</h2>
+
+        <p>
+            O sistema utiliza dados de geração fotovoltaica
+            para auxiliar no gerenciamento inteligente do
+            carregamento de veículos elétricos.
+        </p>
+
+        <br>
+
+        <p>
+            O Smart Charging ajusta a potência do carregamento
+            conforme a disponibilidade de energia solar,
+            buscando aumentar o aproveitamento da energia
+            renovável e a eficiência energética.
+        </p>
+
+    </div>
+
+    <div class="footer">
+        ChargeGrid Intelligence — EV Challenge 2026
+        <br>
+        FIAP x GoodWe
+    </div>
+
+</div>
+
+
+<script>
+
+let ativo = false;
+let solarAtivo = false;
+let timer = null;
+let indice = 0;
+
+let energiaSolar = 0;
+let energiaCarregada = 0;
+let demanda = 0;
+let potencia = 1;
+
+
+/*
+    Perfil de operação.
+*/
+
+const perfil = [
+
+    {
+        hora: "00:00",
+        solar: 0.0,
+        potencia: 1.0,
+        status: "BAIXA GERAÇÃO SOLAR"
+    },
+
+    {
+        hora: "04:00",
+        solar: 0.0,
+        potencia: 1.0,
+        status: "BAIXA GERAÇÃO SOLAR"
+    },
+
+    {
+        hora: "08:00",
+        solar: 1.8,
+        potencia: 3.0,
+        status: "GERAÇÃO SOLAR DISPONÍVEL"
+    },
+
+    {
+        hora: "12:00",
+        solar: 3.2,
+        potencia: 5.0,
+        status: "ALTA GERAÇÃO SOLAR"
+    },
+
+    {
+        hora: "16:00",
+        solar: 1.8,
+        potencia: 3.0,
+        status: "GERAÇÃO SOLAR DISPONÍVEL"
+    },
+
+    {
+        hora: "20:00",
+        solar: 0.0,
+        potencia: 1.0,
+        status: "BAIXA GERAÇÃO SOLAR"
+    }
+
+];
+
+
+/*
+    Atualiza os quatro indicadores.
+*/
+
+function atualizar() {
+
+    document.getElementById("solar").textContent =
+        energiaSolar.toFixed(2);
+
+    document.getElementById("energia").textContent =
+        energiaCarregada.toFixed(2);
+
+    document.getElementById("demanda").textContent =
+        demanda.toFixed(1);
+
+    let participacao = 0;
+
+    if (energiaCarregada > 0) {
+
+        participacao =
+            (energiaSolar / energiaCarregada) * 100;
+
+    }
+
+    participacao =
+        Math.min(participacao, 100);
+
+    document.getElementById("participacao").textContent =
+        participacao.toFixed(1);
+}
+
+
+/*
+    INICIAR CARREGAMENTO
+
+    IMPORTANTE:
+    O carregamento agora ativa a geração solar
+    automaticamente.
+*/
+
+function iniciar() {
+
+    ativo = true;
+
+    solarAtivo = true;
+
+    indice = 0;
+
+    document.getElementById("status").textContent =
+        "CARREGAMENTO E GERAÇÃO SOLAR EM OPERAÇÃO";
+
+    document.getElementById("info").textContent =
+        "Smart Charging ativo — geração solar sendo utilizada.";
+
+    document.getElementById("botaoSolar").textContent =
+        "GERAÇÃO SOLAR ATIVA";
+
+    clearInterval(timer);
+
+    timer = setInterval(function() {
+
+        const atual = perfil[indice];
+
+        /*
+            A demanda muda conforme o período solar.
+        */
+
+        demanda = atual.potencia;
+
+        potencia = atual.potencia;
+
+
+        /*
+            Energia carregada aumenta.
+        */
+
+        energiaCarregada +=
+            potencia * 0.05;
+
+
+        /*
+            Energia solar utilizada também aumenta.
+
+            Mesmo nos horários de baixa geração,
+            existe uma pequena contribuição.
+            Nos horários de maior geração,
+            a contribuição aumenta.
+        */
+
+        if (atual.solar > 0) {
+
+            energiaSolar +=
+                atual.solar * 0.04;
+
+        }
+
+
+        /*
+            Atualiza o controle de potência.
+        */
+
+        document.getElementById("slider").value =
+            potencia;
+
+        document.getElementById("potencia").textContent =
+            potencia.toFixed(1);
+
+
+        /*
+            Mostra o estado atual.
+        */
+
+        document.getElementById("info").textContent =
+            atual.hora +
+            " | " +
+            atual.status +
+            " | Solar: " +
+            atual.solar.toFixed(1) +
+            " kW | Carregamento: " +
+            potencia.toFixed(1) +
+            " kW";
+
+
+        /*
+            Atualiza os quatro valores.
+        */
+
+        atualizar();
+
+
+        /*
+            Avança para o próximo período.
+        */
+
+        indice++;
+
+        if (indice >= perfil.length) {
+
+            indice = 0;
+
+        }
+
+    }, 1000);
+
+}
+
+
+/*
+    PARAR
+*/
+
+function parar() {
+
+    ativo = false;
+
+    clearInterval(timer);
+
+    document.getElementById("status").textContent =
+        "CARREGAMENTO PARADO";
+
+    document.getElementById("info").textContent =
+        "Carregamento interrompido.";
+
+}
+
+
+/*
+    BOTÃO DE GERAÇÃO SOLAR
+
+    Agora ele serve apenas para ligar/desligar
+    a visualização da geração.
+*/
+
+function ativarSolar() {
+
+    solarAtivo = !solarAtivo;
+
+    const botao =
+        document.getElementById("botaoSolar");
+
+
+    if (solarAtivo) {
+
+        botao.textContent =
+            "GERAÇÃO SOLAR ATIVA";
+
+        document.getElementById("status").textContent =
+            "GERAÇÃO SOLAR ATIVA";
+
+        document.getElementById("info").textContent =
+            "Geração solar ativada.";
+
+    } else {
+
+        botao.textContent =
+            "GERAÇÃO SOLAR AUTOMÁTICA";
+
+        document.getElementById("status").textContent =
+            ativo
+                ? "CARREGAMENTO EM OPERAÇÃO"
+                : "SISTEMA INTEGRADO E OPERACIONAL";
+
+        document.getElementById("info").textContent =
+            "Geração solar desativada.";
+
+    }
+
+}
+
+
+/*
+    CONTROLE MANUAL
+*/
+
+function potenciaManual() {
+
+    potencia =
+        Number(
+            document.getElementById("slider").value
+        );
+
+    demanda = potencia;
+
+    document.getElementById("potencia").textContent =
+        potencia.toFixed(1);
+
+    atualizar();
+
+}
+
+
+/*
+    RESET
+*/
+
+function resetar() {
+
+    ativo = false;
+
+    solarAtivo = false;
+
+    indice = 0;
+
+    clearInterval(timer);
+
+    energiaSolar = 0;
+
+    energiaCarregada = 0;
+
+    demanda = 0;
+
+    potencia = 1;
+
+    document.getElementById("slider").value = 1;
+
+    document.getElementById("potencia").textContent =
+        "1.0";
+
+    document.getElementById("botaoSolar").textContent =
+        "GERAÇÃO SOLAR AUTOMÁTICA";
+
+    document.getElementById("status").textContent =
+        "SISTEMA INTEGRADO E OPERACIONAL";
+
+    document.getElementById("info").textContent =
+        "Sistema resetado. Pronto para nova demonstração.";
+
+    atualizar();
+
+}
+
+
+/*
+    GRÁFICO
+*/
+
+function criarGrafico() {
+
+    const grafico =
+        document.getElementById("grafico");
+
+    const maior =
+        Math.max(
+            ...perfil.map(item => item.solar),
+            1
+        );
+
+    perfil.forEach(item => {
+
+        const container =
+            document.createElement("div");
+
+        container.className =
+            "bar-container";
+
+        const altura =
+            (item.solar / maior) * 100;
+
+        container.innerHTML = `
+
+            <div
+                class="bar"
+                style="height:${Math.max(altura, 2)}%"
+            ></div>
+
+            <div class="bar-label">
+                ${item.hora}
+            </div>
+
+        `;
+
+        grafico.appendChild(container);
+
+    });
+
+}
+
+
+/*
+    TABELA
+*/
+
+function criarTabela() {
+
+    const tabela =
+        document.getElementById("tabela");
+
+    perfil.forEach(item => {
+
+        const linha =
+            document.createElement("tr");
+
+        linha.innerHTML = `
+
+            <td>${item.hora}</td>
+
+            <td>
+                ${item.solar.toFixed(2)} kW
+            </td>
+
+            <td>
+                ${item.potencia.toFixed(2)} kW
+            </td>
+
+            <td>
+                ${item.status}
+            </td>
+
+        `;
+
+        tabela.appendChild(linha);
+
+    });
+
+}
+
+
+/*
+    INICIALIZAÇÃO
+*/
+
+criarGrafico();
+
+criarTabela();
+
+atualizar();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+    "sistema": "ChargeGrid Intelligence",
+    "integracao": "SolarTrack + Smart Charging",
+    "energia_solar_utilizada_kwh": 3.96,
+    "energia_total_carregada_kwh": 24.5,
+    "demanda_veiculo_kw": 7.0,
+    "exemplos_operacao": [
+        {
+            "hora": "00:00",
+            "solar_kw": 0.0,
+            "carregamento_kw": 1.0,
+            "status": "BAIXA GERAÇÃO SOLAR"
+        },
+        {
+            "hora": "04:00",
+            "solar_kw": 0.0,
+            "carregamento_kw": 1.0,
+            "status": "BAIXA GERAÇÃO SOLAR"
+        },
+        {
+            "hora": "08:00",
+            "solar_kw": 1.8,
+            "carregamento_kw": 3.0,
+            "status": "GERAÇÃO SOLAR DISPONÍVEL"
+        },
+        {
+            "hora": "12:00",
+            "solar_kw": 3.2,
+            "carregamento_kw": 5.0,
+            "status": "ALTA GERAÇÃO SOLAR"
+        },
+        {
+            "hora": "16:00",
+            "solar_kw": 1.8,
+            "carregamento_kw": 3.0,
+            "status": "GERAÇÃO SOLAR DISPONÍVEL"
+        },
+        {
+            "hora": "20:00",
+            "solar_kw": 0.0,
+            "carregamento_kw": 1.0,
+            "status": "BAIXA GERAÇÃO SOLAR"
+        },
+        {
+            "hora": "24:00",
+            "solar_kw": 0.0,
+            "carregamento_kw": 1.0,
+            "status": "BAIXA GERAÇÃO SOLAR"
+        }
+    ]
+}
