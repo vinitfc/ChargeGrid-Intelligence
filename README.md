@@ -502,7 +502,7 @@ A alteração da potência durante os diferentes períodos demonstra a atuação
 
 # Vídeo da Demonstração
 
-**Vídeo no YouTube:** COLOCAR LINK DO VÍDEO AQUI
+**Vídeo no YouTube:** https://youtu.be/0WvjcFf-oD0?is=eyfshQDrequ_3Yn8
 
 O vídeo apresenta o funcionamento do protótipo e a integração entre os componentes da solução.
 
